@@ -3,6 +3,9 @@
   Timing-Allow-Origin: *
   X-Content-Type-Options: nosniff
 
+/index.html
+  Cache-Control: no-cache
+
 /*.jpg
   Cache-Control: public, max-age=31536000, immutable
 
