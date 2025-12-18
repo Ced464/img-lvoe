@@ -1,2 +1,11 @@
-/site  /  301
-/site/*  /:splat  301
+# 1) 先放行图片目录（关键：避免被 SPA/兜底吃掉）
+/img25/* /img25/:splat 200
+/25test/* /25test/:splat 200
+
+# 2) 兼容旧路径：把 /site 下的图片重定向到根路径（可留可不留）
+/site/img25/* /img25/:splat 301
+/site/25test/* /25test/:splat 301
+
+# 3) 其他 /site 路径继续重定向到根（保留你原来的意图）
+/site / 301
+/site/* /:splat 301
